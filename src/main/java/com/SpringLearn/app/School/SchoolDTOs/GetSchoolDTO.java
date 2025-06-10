@@ -1,6 +1,6 @@
-package com.SpringLearn.app.DTOs.SchoolDTOs;
+package com.SpringLearn.app.School.SchoolDTOs;
 
-import com.SpringLearn.app.DTOs.StudentDTOs.GetStudentDTO;
+import com.SpringLearn.app.Student.StudentDTOs.GetStudentDTO;
 
 import java.util.List;
 

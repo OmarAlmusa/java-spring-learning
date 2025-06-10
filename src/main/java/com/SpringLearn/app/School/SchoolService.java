@@ -1,10 +1,7 @@
-package com.SpringLearn.app.Services;
+package com.SpringLearn.app.School;
 
-import com.SpringLearn.app.DTOs.SchoolDTOs.CreateSchoolDTO;
-import com.SpringLearn.app.DTOs.SchoolDTOs.GetSchoolDTO;
-import com.SpringLearn.app.Entities.School;
-import com.SpringLearn.app.Mappers.SchoolMapper;
-import com.SpringLearn.app.Repositories.SchoolRepository;
+import com.SpringLearn.app.School.SchoolDTOs.CreateSchoolDTO;
+import com.SpringLearn.app.School.SchoolDTOs.GetSchoolDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

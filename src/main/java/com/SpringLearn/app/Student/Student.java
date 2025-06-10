@@ -1,5 +1,7 @@
-package com.SpringLearn.app.Entities;
+package com.SpringLearn.app.Student;
 
+import com.SpringLearn.app.StudentProfile.StudentProfile;
+import com.SpringLearn.app.School.School;
 import jakarta.persistence.*;
 
 @Entity

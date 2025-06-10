@@ -1,4 +1,4 @@
-package com.SpringLearn.app.DTOs.StudentDTOs;
+package com.SpringLearn.app.Student.StudentDTOs;
 
 public record GetStudentDTO(
         String firstName,

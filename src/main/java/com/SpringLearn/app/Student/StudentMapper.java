@@ -1,8 +1,7 @@
-package com.SpringLearn.app.Mappers;
+package com.SpringLearn.app.Student;
 
-import com.SpringLearn.app.DTOs.StudentDTOs.CreateStudentDTO;
-import com.SpringLearn.app.DTOs.StudentDTOs.GetStudentDTO;
-import com.SpringLearn.app.Entities.Student;
+import com.SpringLearn.app.Student.StudentDTOs.CreateStudentDTO;
+import com.SpringLearn.app.Student.StudentDTOs.GetStudentDTO;
 import org.springframework.stereotype.Service;
 
 @Service

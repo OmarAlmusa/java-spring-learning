@@ -1,8 +1,8 @@
-package com.SpringLearn.app.Controllers;
+package com.SpringLearn.app.School;
 
-import com.SpringLearn.app.DTOs.SchoolDTOs.CreateSchoolDTO;
-import com.SpringLearn.app.DTOs.SchoolDTOs.GetSchoolDTO;
-import com.SpringLearn.app.Services.SchoolService;
+import com.SpringLearn.app.School.SchoolDTOs.CreateSchoolDTO;
+import com.SpringLearn.app.School.SchoolDTOs.GetSchoolDTO;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class SchoolController {
 
     @PostMapping("/schools")
     public CreateSchoolDTO addSchool(
-            @RequestBody CreateSchoolDTO schoolPostDTO
+           @Valid @RequestBody CreateSchoolDTO schoolPostDTO
     ){
         return this.schoolService.addSchool(schoolPostDTO);
     }

@@ -1,8 +1,8 @@
-package com.SpringLearn.app.Mappers;
+package com.SpringLearn.app.School;
 
-import com.SpringLearn.app.DTOs.SchoolDTOs.CreateSchoolDTO;
-import com.SpringLearn.app.DTOs.SchoolDTOs.GetSchoolDTO;
-import com.SpringLearn.app.Entities.School;
+import com.SpringLearn.app.Student.StudentMapper;
+import com.SpringLearn.app.School.SchoolDTOs.CreateSchoolDTO;
+import com.SpringLearn.app.School.SchoolDTOs.GetSchoolDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;

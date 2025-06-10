@@ -1,9 +1,9 @@
-package com.SpringLearn.app.Controllers;
+package com.SpringLearn.app.Student;
 
 
-import com.SpringLearn.app.DTOs.StudentDTOs.CreateStudentDTO;
-import com.SpringLearn.app.DTOs.StudentDTOs.GetStudentDTO;
-import com.SpringLearn.app.Services.StudentService;
+import com.SpringLearn.app.Student.StudentDTOs.CreateStudentDTO;
+import com.SpringLearn.app.Student.StudentDTOs.GetStudentDTO;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class StudentController {
 
     @PostMapping("/students")
     public GetStudentDTO addStudent(
-            @RequestBody CreateStudentDTO studentPostDTO
+            @Valid @RequestBody CreateStudentDTO studentPostDTO
     ){
         return this.studentService.addStudent(studentPostDTO);
     }

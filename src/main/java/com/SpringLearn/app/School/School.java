@@ -1,5 +1,6 @@
-package com.SpringLearn.app.Entities;
+package com.SpringLearn.app.School;
 
+import com.SpringLearn.app.Student.Student;
 import jakarta.persistence.*;
 
 import java.util.List;

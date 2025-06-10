@@ -1,6 +1,5 @@
-package com.SpringLearn.app.Repositories;
+package com.SpringLearn.app.Student;
 
-import com.SpringLearn.app.Entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
