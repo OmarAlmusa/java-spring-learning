@@ -10,7 +10,7 @@ public record CreateStudentDTO(
         String lastName,
         String email,
         int age,
-        School school
+        Integer school_id
 ) {
 
 }

@@ -16,8 +16,8 @@ public class School {
     private String schoolName;
 
     @OneToMany(
-            mappedBy = "school",
-            cascade = CascadeType.ALL
+            mappedBy = "school"
+//            cascade = CascadeType.ALL
     )
     private List<Student> students;
 

@@ -1,5 +1,6 @@
 package com.SpringLearn.app.Student;
 
+import com.SpringLearn.app.Student.StudentDTOs.CreateStudentDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -7,19 +8,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StudentMapperTest {
 
+    private StudentMapper mapper;
+
     @BeforeEach
     void setUp() {
-        System.out.println("Setup before each test method");
+        mapper = new StudentMapper();
     }
 
     @Test
-    public void testMethod1(){
-        System.out.println("Running test method 1");
+    public void testToStudentGetDTO(){
+        CreateStudentDTO studentDTO = new CreateStudentDTO(
+                "Kelly",
+                "Johnson",
+                "kjohn98@gmail.com",
+                23,
+                1
+        );
     }
-
-    @Test
-    public void testMethod2(){
-        System.out.println("Running test method 2");
-    }
-
 }

@@ -23,7 +23,6 @@ public class StudentMapper {
         student.setLastName(studentPostDTO.lastName());
         student.setEmail(studentPostDTO.email());
         student.setAge(studentPostDTO.age());
-        student.setSchool(studentPostDTO.school());
         return student;
     }
 }

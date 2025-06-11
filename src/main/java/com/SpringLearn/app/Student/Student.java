@@ -29,7 +29,6 @@ public class Student {
     )
     private School school;
 
-
     public Student() {
     }
 
@@ -39,7 +38,8 @@ public class Student {
                    String email,
                    int age,
                    StudentProfile studentProfile,
-                   School school
+                   School school,
+                   Integer school_id
     ) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -47,7 +47,6 @@ public class Student {
         this.age = age;
         this.studentProfile = studentProfile;
         this.school = school;
-
     }
 
     public Integer getId() {
@@ -101,4 +100,5 @@ public class Student {
     public void setSchool(School school) {
         this.school = school;
     }
+
 }
