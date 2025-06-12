@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 @Entity
 public class Student {
 
+
+
     @Id
     @GeneratedValue
     private Integer id;
@@ -75,6 +77,10 @@ public class Student {
 
     public School getSchool() {
         return school;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setFirstName(String firstName) {
