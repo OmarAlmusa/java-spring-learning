@@ -1,0 +1,118 @@
+# db/changelog/db.changelog-1.0.yaml
+# This file contains the initial schema creation changesets for the Student and School entities.
+
+databaseChangeLog:
+  - changeSet:
+      id: create-school-table-1
+      author: Omar Almusa
+      changes:
+        - createTable:
+            tableName: school
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: school_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false # School name should probably not be null
+
+  - changeSet:
+      id: create-student-table-2
+      author: Omar Almusa
+      changes:
+        - createTable:
+            tableName: student
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true # As specified by @Column(unique = true)
+                    nullable: false
+              - column:
+                  name: age
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: school_id
+                  type: INT
+                  constraints:
+                    nullable: true # A student might not be associated with a school initially (or ever)
+
+  - changeSet:
+      id: add-fk-student-school-3
+      author: Omar Almusa
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: student
+            baseColumnNames: school_id
+            referencedTableName: school
+            referencedColumnNames: id
+            constraintName: fk_student_school # A descriptive name for the foreign key constraint
+            onDelete: CASCADE # Behavior when a referenced school is deleted: cascade deletion of students
+            onUpdate: RESTRICT # Behavior when a referenced school's ID is updated: restrict update
+            validate: true # Whether to validate existing data against the constraint
+
+  - changeSet:
+      id: create-student-profile-table-4
+      author: Omar Almusa
+      changes:
+        - createTable:
+            tableName: student_profile
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: bio
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true # Bio can be null
+              - column:
+                  name: student_id
+                  type: INT
+                  constraints:
+                    nullable: false # StudentProfile must be linked to a Student
+                    unique: true # @OneToOne implies a unique relationship
+
+  - changeSet:
+      id: add-fk-student-profile-student-5
+      author: Omar Almusa
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: student_profile
+            baseColumnNames: student_id
+            referencedTableName: student
+            referencedColumnNames: id
+            constraintName: fk_student_profile_student # A descriptive name for the foreign key constraint
+            onDelete: CASCADE # If a student is deleted, their profile is also deleted
+            onUpdate: RESTRICT
+            validate: true
